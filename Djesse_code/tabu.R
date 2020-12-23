@@ -71,10 +71,14 @@ plot(increased_tabu)
 score(increased_tabu, df)
 
 # Try to convert this model to lavaan
-g <- dagitty('dag { Age Escore Caffeine Gender Nscore Oscore Ascore Cscore Impulsive Sensation_seeking Education Cannabis Meth Age -> Gender Age -> Nscore Gender -> Nscore Age -> Oscore Gender -> Oscore Gender -> Ascore Age -> Cscore Gender -> Cscore Gender -> Impulsive Nscore -> Impulsive Escore -> Impulsive Oscore -> Impulsive Ascore -> Impulsive Cscore -> Impulsive Age -> Sensation_seeking Gender -> Sensation_seeking Escore -> Sensation_seeking Oscore -> Sensation_seeking Ascore -> Sensation_seeking Impulsive -> Sensation_seeking Gender -> Education Oscore -> Education Cscore -> Education Sensation -> Education Age -> Cannabis Gender -> Cannabis Education -> Cannabis Escore -> Cannabis Oscore -> Cannabis Cscore -> Cannabis Sensation -> Cannabis Age -> Meth Gender -> Meth Education -> Meth Nscore -> Meth Escore -> Meth Oscore -> Meth Ascore -> Meth Sensation -> Meth }')
+g <- dagitty('dag { Age Escore Caffeine Gender Nscore Oscore Ascore Cscore Impulsive Sensation_seeking Education Cannabis Meth Age -> Gender Age -> Nscore Gender -> Nscore Age -> Oscore Gender -> Oscore Gender -> Ascore Age -> Cscore Gender -> Cscore Gender -> Impulsive Nscore -> Impulsive Escore -> Impulsive Oscore -> Impulsive Ascore -> Impulsive Cscore -> Impulsive Age -> Sensation_seeking Gender -> Sensation_seeking Escore -> Sensation_seeking Oscore -> Sensation_seeking Ascore -> Sensation_seeking Impulsive -> Sensation_seeking Gender -> Education Oscore -> Education Cscore -> Education Sensation_seeking -> Education Age -> Cannabis Gender -> Cannabis Education -> Cannabis Escore -> Cannabis Oscore -> Cannabis Cscore -> Cannabis Sensation_seeking -> Cannabis Age -> Meth Gender -> Meth Education -> Meth Nscore -> Meth Escore -> Meth Oscore -> Meth Ascore -> Meth Sensation_seeking -> Meth }')
 plot(increased_tabu_dagitty)
 
 M <- lavCor(df, cor.smooth=TRUE)
 model1 <- toString(g,"lavaan")
 msem <- lavaan(model1, sample.cov=M, sample.nobs=nrow(df),estimator="ML", auto.var=TRUE, fixed.x = FALSE)
-model1
+x <- lavaan::parTable(msem)
+fg <- lavaanToGraph(x, digits = 2)
+plot(fg, show.coefficients = TRUE)
+
+g

@@ -24,11 +24,11 @@ for node in nodes:
 
         parent_list = []
         for parent in parents.split(":"):
-            parent_list.append(re.search("[a-zA-Z]*", parent).group(0))
+            parent_list.append(re.search("[a-zA-Z]+(?:_[a-zA-Z]+)*", parent).group(0))
         node_parent_dict[target] = parent_list
 
     else:
-        node = re.search("[a-zA-Z]*", node).group(0)
+        node = re.search("[a-zA-Z]+(?:_[a-zA-Z]+)*", node).group(0)
         node_parent_dict[node] = []
 
 # Construct dagitty string
@@ -44,6 +44,7 @@ for root, parents in node_parent_dict.items():
             dagitty_string += " {} -> {}".format(parent, root)
 
 dagitty_string += " }"
+
 
 # Print result
 print(dagitty_string)
