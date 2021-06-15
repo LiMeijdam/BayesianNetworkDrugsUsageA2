@@ -4,7 +4,8 @@ Original dataset: https://ai.googleblog.com/2017/08/launching-speech-commands-da
 
 Due to the size of the dataset this was **not** uploaded to the repository, please refer to the above URL.
 
-Folders & Files:
+# Folders & Files:
+
 - Data preparation - Jupyter notebooks that were used to transform audio files
   -  Data loading.ipynb - Notebook that is used to transform .wav files to NN compatible format
   -  Noise addition.ipynb - Notebook that uses a noise audio file and adds this to original speech audio  
@@ -33,17 +34,17 @@ Folders & Files:
     -  ConfusionMatrixResNet - Confusion matrix results for ResNet
     -  ConfusionMatrixWaveNet - Confusion matrix results for WaveNet
 
-How to use:
+# How to use:
 - In order to use the notebooks the relevant programming should be installed first
 - Since the files are created in jupyter notebooks it is encouraged to install/inspect/run them with jupyter notebook (using [anaconda](https://www.anaconda.com/products/individual) for example).
 - These notebook files can also be read with other interpreters but sometimes conversion is needed 
 
-A natural reading order:
+# A natural reading order:
 - Data preparation -> RQ1 -> RQ2 -> RQ3 -> RQ4 -> RQ5 (or be guided through this process by reading along with the report)
 
-For questions:
+# For questions:
 - Please contact lieuwe_meijdam@hotmail.com for questions/ when running into bugs in the code.
 
-A Disclaimer: 
+# A Disclaimer: 
 - No rights can be reserved from the findings of the report and/or notebooks this project was setup for educational purposes solely.
 - Enjoy!
