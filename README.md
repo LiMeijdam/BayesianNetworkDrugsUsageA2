@@ -29,9 +29,9 @@ Folders & Files:
   -  ConfusionMatrixClean.png - Confusion matrix with performance results for clean data
   -  ConfusionMatrixNoisy.png - Confusion matrix with performance results for noisy data
 -  RQ5-ResNet comparison
-  - Evaluation_baseline_for_ResNet.ipynb - Evaluation results for ResNet comparison (Credits to Djesse Dirckx)
-  - ConfusionMatrixResNet - Confusion matrix results for ResNet
-  - ConfusionMatrixWaveNet - Confusion matrix results for WaveNet
+  -  Evaluation_baseline_for_ResNet.ipynb - Evaluation results for ResNet comparison (Credits to Djesse Dirckx)
+  -  ConfusionMatrixResNet - Confusion matrix results for ResNet
+  -  ConfusionMatrixWaveNet - Confusion matrix results for WaveNet
 
 How to use:
 - In order to use the notebooks the relevant programming should be installed first
