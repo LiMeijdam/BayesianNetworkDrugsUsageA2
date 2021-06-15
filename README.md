@@ -1,50 +1,42 @@
 # Bayesian networks assignment 2 - structure learning
 
-Original dataset: https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html
+Original dataset: http://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29
 
-Due to the size of the dataset this was **not** uploaded to the repository, please refer to the above URL.
+Files:
 
-# Folders & Files:
+- Data_preprocessing.ipynb - Jupyter notebook based on Python
+- EDA.ipynb - Jupyter notebook based on Python
+- PC_Algorithm.ipynb - Jupyter notebook based on R
+- Tabu_Algorithm.ipynb - Jupyter notebook based on R
+- bnlearn_to_dagitty.py - Python script
+- Datasets - all .csv files, if these files are changed the notebooks may not function anymore!
 
-- Data preparation - Jupyter notebooks that were used to transform audio files
-  -  Data loading.ipynb - Notebook that is used to transform .wav files to NN compatible format
-  -  Noise addition.ipynb - Notebook that uses a noise audio file and adds this to original speech audio  
-  -  Data loading whitenoise.ipynb - Notebook used to transform noisy .wav files to NN compatible format
-- Performance evaluation
-  -  Evaluation.ipynb - Notebook with statistical packages installed to calculate performance metrics
-- Utils
-  -  Confusion_matrix_pretty_print.py - python library script for pretty confusion matrices (credits to Wagner Cipriano)
-- RQ1-Baseline model 
-    -  WaveNet-24-lyrs.ipynb - Baseline notebook of WaveNet with default parameters
-    -  ConfusionMatrix24lyrs30epochs.png - Confusion matrix export of the model performance
-    -  WaveNet-Architecture.png - Image of the WaveNet architecture
-- RQ2-Layer sensitivity
-    -  WaveNet-**X**-lyrs.ipynb - Notebooks with WaveNet models with varying layers
-    -  ConfusionMatrix**X**lyrs30epochs.png - Confusion matrices with WaveNet model performance with varying layers
-- RQ3-Data need
-    -  WaveNet-24-lyrs Datasplit experiment **X**%.ipynb - Notebook with baseline WaveNet model trained on X% data
-    -  ConfusionMatrix**X**%Data.png - Confusion matrix of respective model/ with data %
-- RQ4-Noisy data impact
-    -  WaveNet-24-lyrs-Clean.ipynb - Baseline WaveNet performance on original/ clean data
-    -  WaveNet-24-lyrs-WhiteNoise.ipynb - Baseline WaveNet performance on data with .8% probability of being noisy
-    -  ConfusionMatrixClean.png - Confusion matrix with performance results for clean data
-    -  ConfusionMatrixNoisy.png - Confusion matrix with performance results for noisy data
-- RQ5-ResNet comparison
-    -  Evaluation_baseline_for_ResNet.ipynb - Evaluation results for ResNet comparison (Credits to Djesse Dirckx)
-    -  ConfusionMatrixResNet - Confusion matrix results for ResNet
-    -  ConfusionMatrixWaveNet - Confusion matrix results for WaveNet
+Short description:
 
-# How to use:
+- Data_preprocessing.ipynb - Transforming the dataset_Original to a format that is convenient
+- EDA.ipynb - Exploratory Data Analysis performed on the data
+- PC_Algorithm.ipynb - Jupyter notebook that was used to conduct several experiments using the PC-stable structure learning algorithm on the dataset.
+- Tabu_Algorithm.ipynb - Jupyter notebook that was used to conduct several experiments using the Tabu search structure learning algorithm on the dataset.
+- bnlearn_to_dagitty.py - Python script than can be used to convert a bnlearn network structure to a dagitty structure.
+
+How to use:
+
 - In order to use the notebooks the relevant programming should be installed first
-- Since the files are created in jupyter notebooks it is encouraged to install/inspect/run them with jupyter notebook (using [anaconda](https://www.anaconda.com/products/individual) for example).
-- These notebook files can also be read with other interpreters but sometimes conversion is needed 
+- Since the files are created in jupyter notebooks it is encouraged to install/inspect/run them with jupyter notebook (using anaconda for example).
+- These notebook files can also be read with other interpreters but sometimes conversion is needed
+- All R notebooks are dependent on the dataset that gets created by Data_preprocessing and EDA. The uploaded datasets currently are already processed by these two and the R files should be click to run. If Data_Preprocessing is ran again than EDA needs to be ran aswell before the other notebooks will recognize the datasets again. (if not needed it is advised to just visually inspect the Data_preprocessing and EDA notebook instead of rerunning them)
+- The packages used are in the first cell for all notebooks (python and R) all the packages stated are needed to be able to run the notebooks. (simply search up the library name to see its installation instructions)
+- When downloading all of it as zip it should be able to run immediately (while taking the above points into account)
 
-# A natural reading order:
-- Data preparation -> RQ1 -> RQ2 -> RQ3 -> RQ4 -> RQ5 (or be guided through this process by reading along with the report)
+A natural reading order:
 
-# For questions:
-- Please contact lieuwe_meijdam@hotmail.com for questions/ when running into bugs in the code.
+- Data_preprocessing --> EDA --> PC_Algorithm --> Tabu_Algorithm (or be guided through this process by reading along with the report which refers to all the named notebooks)
 
-# A Disclaimer: 
-- No rights can be reserved from the findings of the report and/or notebooks this project was setup for educational purposes solely.
-- Enjoy!
+For questions:
+
+Please contact lieuwe_meijdam@hotmail.com or djesse.dirckx@student.ru.nl for questions/ when running into bugs in the code.
+
+A Disclaimer:
+
+No rights can be reserved from the findings of the report and/or notebooks this project was setup for educational purposes solely.
+Enjoy!
